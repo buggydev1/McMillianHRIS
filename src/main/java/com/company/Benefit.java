@@ -14,7 +14,7 @@ public class Benefit
 
         try
         {
-            Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
             Statement statement = connect.createStatement();
             ResultSet rs = statement.executeQuery("SELECT * FROM EMPLOYEE_BENEFITS ");
             System.out.println("Press 1 to see your medical benefits, 2 to see you vision benefits or 3 to see your dental benefits");
