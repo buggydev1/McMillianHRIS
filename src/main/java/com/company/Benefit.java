@@ -46,6 +46,7 @@ public class Benefit
                 e.printStackTrace();
             }
         }
+    /*
 
         public static void updateBenefits() {
             System.out.println("Please enter the Employee ID of the person whose benefits you would like to update: ");
@@ -155,4 +156,5 @@ public class Benefit
                 }
             }
         }
+        */
     }
