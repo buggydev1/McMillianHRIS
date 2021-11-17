@@ -41,18 +41,18 @@ public class Main extends employeeTrackingSystem {
             System.out.println("2. Read an applicant in the database");
             System.out.println("3. Update an applicant's information");
             System.out.println("4. Delete an applicant");
-            int empChoice = s.nextInt();
+            int appChoice = s.nextInt();
 
-            if(empChoice == 1) {
+            if(appChoice == 1) {
                 createApplicant();
             }
-            else if(empChoice == 2) {
+            else if(appChoice == 2) {
                 readApplicant();
             }
-            else if(empChoice == 3) {
+            else if(appChoice == 3) {
                 updateApplicant();
             }
-            else if(empChoice == 4) {
+            else if(appChoice == 4) {
                 deleteApplicant();
             }
         }
