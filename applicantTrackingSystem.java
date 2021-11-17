@@ -23,7 +23,7 @@ public class applicantTrackingSystem {
         try {
             Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
             Statement statement = connect.createStatement();
-            statement.executeQuery("INSERT INTO APPLICANT_TRACKING VALUES (" + firstName + ", " + lastName + ", " + phoneNumber +
+            statement.executeQuery("INSERT INTO APPLICANT VALUES (" + firstName + ", " + lastName + ", " + phoneNumber +
                     ", " + email + ", " + address + ", " + prev_workEXP + ";");
             connect.close();
             System.out.println("Applicant successfully created!");
@@ -36,7 +36,7 @@ public class applicantTrackingSystem {
         try {
             Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
             Statement statement = connect.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM APPLICANT_TRACKING ");
+            ResultSet rs = statement.executeQuery("SELECT * FROM APPLICANT;");
             while(rs.next()) {
                 System.out.println(rs.getString("applicantID"));
                 System.out.println(rs.getString("firstName"));
@@ -57,7 +57,7 @@ public class applicantTrackingSystem {
         try {
             Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
             Statement statement = connect.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT applicantID, firstName, lastName FROM APPLICANT_TRACKING");
+            ResultSet rs = statement.executeQuery("SELECT applicantID, firstName, lastName FROM APPLICANT");
             while(rs.next()) {
                 System.out.println(rs.getString("applicantID")); //NOT SURE IF IT'S CALLED USER ID IN OUR DATA, WILL CHECK INTO IT
             }
@@ -82,7 +82,7 @@ public class applicantTrackingSystem {
             try {
                 Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
                 Statement statement = connect.createStatement();
-                statement.executeQuery("UPDATE APPLICANT_TRACKING SET firstName = " + update + " WHERE applicantID = " + appId + ";");
+                statement.executeQuery("UPDATE APPLICANT SET firstName = " + update + " WHERE applicantID = " + appId + ";");
                 connect.close();
                 System.out.println("Successfully Updated Applicant!");
             } catch (Exception e) {
@@ -96,7 +96,7 @@ public class applicantTrackingSystem {
             try {
                 Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
                 Statement statement = connect.createStatement();
-                statement.executeQuery("UPDATE APPLICANT_TRACKING SET lastName = " + update + " WHERE applicantID = " + appId + ";");
+                statement.executeQuery("UPDATE APPLICANT SET lastName = " + update + " WHERE applicantID = " + appId + ";");
                 connect.close();
                 System.out.println("Successfully Updated Applicant!");
             } catch (Exception e) {
@@ -110,7 +110,7 @@ public class applicantTrackingSystem {
             try {
                 Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
                 Statement statement = connect.createStatement();
-                statement.executeQuery("UPDATE APPLICANT_TRACKING SET phoneNumber = " + update + " WHERE applicantID = " + appId + ";");
+                statement.executeQuery("UPDATE APPLICANT SET phoneNumber = " + update + " WHERE applicantID = " + appId + ";");
                 connect.close();
                 System.out.println("Successfully Updated Applicant!");
             } catch (Exception e) {
@@ -124,7 +124,7 @@ public class applicantTrackingSystem {
             try {
                 Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
                 Statement statement = connect.createStatement();
-                statement.executeQuery("UPDATE APPLICANT_TRACKING SET email = " + update + " WHERE applicantID = " + appId + ";");
+                statement.executeQuery("UPDATE APPLICANT SET email = " + update + " WHERE applicantID = " + appId + ";");
                 connect.close();
                 System.out.println("Successfully Updated Applicant!");
             } catch (Exception e) {
@@ -138,7 +138,7 @@ public class applicantTrackingSystem {
             try {
                 Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
                 Statement statement = connect.createStatement();
-                statement.executeQuery("UPDATE APPLICANT_TRACKING SET address = " + update + " WHERE applicantID = " + appId + ";");
+                statement.executeQuery("UPDATE APPLICANT SET address = " + update + " WHERE applicantID = " + appId + ";");
                 connect.close();
                 System.out.println("Successfully Updated Applicant!");
             } catch (Exception e) {
@@ -152,7 +152,7 @@ public class applicantTrackingSystem {
             try {
                 Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
                 Statement statement = connect.createStatement();
-                statement.executeQuery("UPDATE APPLICANT_TRACKING SET prev_workEXP = " + update + " WHERE applicantID = " + appId + ";");
+                statement.executeQuery("UPDATE APPLICANT SET prev_workEXP = " + update + " WHERE applicantID = " + appId + ";");
                 connect.close();
                 System.out.println("Successfully Updated Applicant!");
             } catch (Exception e) {
@@ -169,7 +169,7 @@ public class applicantTrackingSystem {
         try {
             Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
             Statement statement = connect.createStatement();
-            statement.executeQuery("DELETE FROM APPLICANT_TRACKING WHERE firstName = " + fName + " & lastName = " + lName + ";");
+            statement.executeQuery("DELETE FROM APPLICANT WHERE firstName = " + fName + " & lastName = " + lName + ";");
             connect.close();
             System.out.println("Successfully Deleted Applicant!");
         } catch (Exception e) {
