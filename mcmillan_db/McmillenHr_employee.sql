@@ -32,7 +32,8 @@ DROP TABLE IF EXISTS `employee`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `employee` (
   `employee_id` int(11) NOT NULL AUTO_INCREMENT,
-  `employee_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `first_name` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  'last_name' varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `email` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `phone_number` varchar(15) NOT NULL,
