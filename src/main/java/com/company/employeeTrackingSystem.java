@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Connection;
 
-public class employeeTrackingSystem {
+public class employeeTrackingSystem extends applicantTrackingSystem {
     static Scanner s = new Scanner(System.in);
     public static void createEmployee() {
         System.out.println("First Name: "); //check for new variable name when SQL table changed
