@@ -23,7 +23,7 @@ public class applicantTrackingSystem {
         String prev_workEXP = s.nextLine();
 
         try {
-            Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
             Statement statement = connect.createStatement();
             statement.executeQuery("INSERT INTO APPLICANT VALUES (" + firstName + ", " + lastName + ", " + phoneNumber +
                     ", " + email + ", " + address + ", " + prev_workEXP + ";");
@@ -36,7 +36,7 @@ public class applicantTrackingSystem {
 
     public static void readApplicant() {
         try {
-            Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
             Statement statement = connect.createStatement();
             ResultSet rs = statement.executeQuery("SELECT * FROM APPLICANT;");
             while(rs.next()) {
@@ -57,7 +57,7 @@ public class applicantTrackingSystem {
     public static void updateApplicant() {
         System.out.println("Please enter the Applicant ID of the person you would like to update: ");
         try {
-            Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
             Statement statement = connect.createStatement();
             ResultSet rs = statement.executeQuery("SELECT applicantID, firstName, lastName FROM APPLICANT");
             while(rs.next()) {
@@ -82,7 +82,7 @@ public class applicantTrackingSystem {
             System.out.println("Please enter the updated first name: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE APPLICANT SET firstName = " + update + " WHERE applicantID = " + appId + ";");
                 connect.close();
@@ -96,7 +96,7 @@ public class applicantTrackingSystem {
             System.out.println("Please enter the updated last name: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE APPLICANT SET lastName = " + update + " WHERE applicantID = " + appId + ";");
                 connect.close();
@@ -110,7 +110,7 @@ public class applicantTrackingSystem {
             System.out.println("Please enter the updated phone number: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE APPLICANT SET phoneNumber = " + update + " WHERE applicantID = " + appId + ";");
                 connect.close();
@@ -124,7 +124,7 @@ public class applicantTrackingSystem {
             System.out.println("Please enter the updated email address: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE APPLICANT SET email = " + update + " WHERE applicantID = " + appId + ";");
                 connect.close();
@@ -138,7 +138,7 @@ public class applicantTrackingSystem {
             System.out.println("Please enter the updated home address: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE APPLICANT SET address = " + update + " WHERE applicantID = " + appId + ";");
                 connect.close();
@@ -152,7 +152,7 @@ public class applicantTrackingSystem {
             System.out.println("Please enter the updated work experience: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE APPLICANT SET prev_workEXP = " + update + " WHERE applicantID = " + appId + ";");
                 connect.close();
@@ -169,7 +169,7 @@ public class applicantTrackingSystem {
         System.out.println("Please enter last name of the applicant that you wish to delete: ");
         String lName = s.nextLine();
         try {
-            Connection connect = DriverManager.getConnection("insert url to host here", "root", "group3password");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
             Statement statement = connect.createStatement();
             statement.executeQuery("DELETE FROM APPLICANT WHERE firstName = " + fName + " & lastName = " + lName + ";");
             connect.close();
