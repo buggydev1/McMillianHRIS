@@ -9,9 +9,9 @@ import java.sql.Connection;
 public class employeeTrackingSystem extends applicantTrackingSystem {
     static Scanner s = new Scanner(System.in);
     public static void createEmployee() {
-        System.out.println("First Name: "); //check for new variable name when SQL table changed
+        System.out.println("First Name: "); 
         String first_name = s.nextLine();
-        System.out.println("Last Name: "); //check for new variable name when SQL table changed
+        System.out.println("Last Name: "); 
         String last_name = s.nextLine();
         System.out.println("Address: ");
         String address = s.nextLine();
@@ -34,9 +34,9 @@ public class employeeTrackingSystem extends applicantTrackingSystem {
 
 
         try {
-            Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
             Statement statement = connect.createStatement();
-            statement.executeQuery("INSERT INTO APPLICANT_TRACKING VALUES (" + first_name + ", " + last_name + ", " + address +
+            statement.executeQuery("INSERT INTO EMPLOYEE VALUES (" + first_name + ", " + last_name + ", " + address +
                     ", " + email + ", " + phone_number + ", " + hire_date + ", " + salary + ", " + manager_id + ", " + dep_id + ", " + training_status +
                     ", " + performance_status + ";");
             connect.close();
@@ -48,7 +48,7 @@ public class employeeTrackingSystem extends applicantTrackingSystem {
 
     public static void readEmployee() {
         try {
-            Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
             Statement statement = connect.createStatement();
             ResultSet rs = statement.executeQuery("SELECT * FROM EMPLOYEE;");
             while(rs.next()) {
@@ -73,7 +73,7 @@ public class employeeTrackingSystem extends applicantTrackingSystem {
     public static void updateEmployee() {
         System.out.println("Please enter the Employee ID of the person you would like to update: ");
         try {
-            Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
             Statement statement = connect.createStatement();
             ResultSet rs = statement.executeQuery("SELECT employee_id, first_name, last_name FROM EMPLOYEE;");
             while(rs.next()) {
@@ -103,7 +103,7 @@ public class employeeTrackingSystem extends applicantTrackingSystem {
             System.out.println("Please enter the updated first name: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE EMPLOYEE SET first_name = " + update + " WHERE employee_id = " + empId + ";");
                 connect.close();
@@ -117,7 +117,7 @@ public class employeeTrackingSystem extends applicantTrackingSystem {
             System.out.println("Please enter the updated last name: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE EMPLOYEE SET last_name = " + update + " WHERE employee_id = " + empId + ";");
                 connect.close();
@@ -131,7 +131,7 @@ public class employeeTrackingSystem extends applicantTrackingSystem {
             System.out.println("Please enter the updated address: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE EMPLOYEE SET address = " + update + " WHERE employee_id = " + empId + ";");
                 connect.close();
@@ -145,7 +145,7 @@ public class employeeTrackingSystem extends applicantTrackingSystem {
             System.out.println("Please enter the updated email address: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE EMPLOYEE SET email = " + update + " WHERE employee_id = " + empId + ";");
                 connect.close();
@@ -159,7 +159,7 @@ public class employeeTrackingSystem extends applicantTrackingSystem {
             System.out.println("Please enter the updated phone number: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE EMPLOYEE SET phone_number = " + update + " WHERE employee_id = " + empId + ";");
                 connect.close();
@@ -173,7 +173,7 @@ public class employeeTrackingSystem extends applicantTrackingSystem {
             System.out.println("Please enter the updated hire date: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE EMPLOYEE SET hire_date = " + update + " WHERE employee_id = " + empId + ";");
                 connect.close();
@@ -187,7 +187,7 @@ public class employeeTrackingSystem extends applicantTrackingSystem {
             System.out.println("Please enter the updated salary: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE EMPLOYEE SET salary = " + update + " WHERE employee_id = " + empId + ";");
                 connect.close();
@@ -201,7 +201,7 @@ public class employeeTrackingSystem extends applicantTrackingSystem {
             System.out.println("Please enter the updated manager ID: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE EMPLOYEE SET manager_id = " + update + " WHERE employee_id = " + empId + ";");
                 connect.close();
@@ -215,7 +215,7 @@ public class employeeTrackingSystem extends applicantTrackingSystem {
             System.out.println("Please enter the updated department ID: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE EMPLOYEE SET dep_id = " + update + " WHERE employee_id = " + empId + ";");
                 connect.close();
@@ -229,7 +229,7 @@ public class employeeTrackingSystem extends applicantTrackingSystem {
             System.out.println("Please enter the updated training status: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE EMPLOYEE SET training_status = " + update + " WHERE employee_id = " + empId + ";");
                 connect.close();
@@ -243,7 +243,7 @@ public class employeeTrackingSystem extends applicantTrackingSystem {
             System.out.println("Please enter the updated performance status: ");
             String update = s.nextLine();
             try {
-                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
                 Statement statement = connect.createStatement();
                 statement.executeQuery("UPDATE EMPLOYEE SET performance_status = " + update + " WHERE employee_id = " + empId + ";");
                 connect.close();
@@ -260,7 +260,7 @@ public class employeeTrackingSystem extends applicantTrackingSystem {
         System.out.println("Please enter last name of the employee that you wish to delete: ");
         String lName = s.nextLine();
         try {
-            Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "group3password");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://35.238.229.38:3306/McmillenHr", "root", "passwordGroup3");
             Statement statement = connect.createStatement();
             statement.executeQuery("DELETE FROM EMPLOYEE WHERE first_name = " + fName + " & last_name = " + lName + ";");
             connect.close();
